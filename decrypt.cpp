@@ -11,7 +11,7 @@ int main( int argc , char *argv[] )
 	ofstream outputFile ("deciphered");
 	char ch;
 	int count = 0;
-	int shiftAmt = 100;
+	int shiftAmt = 128;
 	int shift;
 	char c;
 	
@@ -21,7 +21,6 @@ int main( int argc , char *argv[] )
 	while( inputFile >> ch )
 	{
 		keyFile >> shift;
-		cout << shift << endl;
 		outputFile << (char)(ch - shift);
 	}
 

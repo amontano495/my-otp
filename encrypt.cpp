@@ -11,7 +11,7 @@ int main( int argc , char *argv[] )
 	ofstream outputFile ("output");
 	char ch;
 	int count = 0;
-	int shiftAmt = 100;
+	int shiftAmt = 128;
 	int shift;
 	
 	inputFile.open(argv[1]);
@@ -20,9 +20,10 @@ int main( int argc , char *argv[] )
 
 	while( inputFile >> noskipws >> ch )
 	{
-		shift = (rand() % shiftAmt );
+		shift = (rand() % (int)(shiftAmt - ch) );
 		keyFile << shift << ' ';
 		outputFile << (char)(ch + shift);
+		cout << (int)(ch + shift) << endl;
 	}
 
 	outputFile.close();
