@@ -20,10 +20,9 @@ int main( int argc , char *argv[] )
 
 	while( inputFile >> noskipws >> ch )
 	{
-		shift = (rand() % (int)(shiftAmt - ch) );
+		shift = ( rand() % shiftAmt );
 		keyFile << shift << ' ';
-		outputFile << (char)(ch + shift);
-		cout << (int)(ch + shift) << endl;
+		outputFile << (char)(ch + (shift % shiftAmt));
 	}
 
 	outputFile.close();

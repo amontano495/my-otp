@@ -21,7 +21,7 @@ int main( int argc , char *argv[] )
 	while( inputFile >> ch )
 	{
 		keyFile >> shift;
-		outputFile << (char)(ch - shift);
+		outputFile << (char)(ch - (shift % shiftAmt));
 	}
 
 	outputFile.close();
